@@ -8,9 +8,9 @@ draw_pca <- function(data_frame,
                      return_data = F) {
 
   if (log == T) {
-    pca_dat <- prcomp(t(log2(data_frame)))
+    pca_dat <- stats::prcomp(t(log2(data_frame)))
   } else {
-    pca_dat <- prcomp(t(data_frame))
+    pca_dat <- stats::prcomp(t(data_frame))
   }
 
   pca_df <- data.frame(pc1 = pca_dat$x[, x_axis],
@@ -24,12 +24,12 @@ draw_pca <- function(data_frame,
   stdev_val <- pca_dat$sdev^2
   stdev_val <- round(stdev_val/sum(stdev_val)*100, 1)
 
-  ggplot(pca_df, aes(pc1, pc2)) +
-    geom_point(cex = 3.3, shape = 21, aes(fill = groups), alpha = 0.8, stroke = 0.3) +
-    theme(panel.background = element_blank(),
-          panel.border = element_rect(fill = NA),
+  ggplot2::ggplot(pca_df, ggplot2::aes(pc1, pc2)) +
+    ggplot2::geom_point(cex = 3.3, shape = 21, aes(fill = groups), alpha = 0.8, stroke = 0.3) +
+    ggplot2::theme(panel.background = ggplot2::element_blank(),
+          panel.border = ggplot2::element_rect(fill = NA),
           aspect.ratio = 1,
-          legend.key = element_blank()) +
+          legend.key = ggplot2::element_blank()) +
     labs(x = paste0(x_axis, ": ", stdev_val[as.numeric(str_extract(x_axis, "[0-9]"))], "%"),
          y = paste0(y_axis, ": ", stdev_val[as.numeric(str_extract(y_axis, "[0-9]"))], "%"))
 
