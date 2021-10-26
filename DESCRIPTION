@@ -11,6 +11,10 @@ RoxygenNote: 7.1.2
 URL: https://github.com/jackbibby1/plotting
 BugReports: https://github.com/jackbibby1/plotting/issues
 Imports: 
+    dplyr,
     ggplot2,
     ggrepel,
-    stringr
+    magrittr,
+    stringr,
+    tibble,
+    tidyr

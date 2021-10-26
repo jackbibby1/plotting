@@ -4,10 +4,10 @@
 \alias{draw_volcano}
 \title{Draw a volcano plot with FDR and logFC values}
 \usage{
-draw_volcano(data_frame, fdr_cutoff = 0.05, logfc_cutoff = 1)
+draw_volcano(df, fdr_cutoff = 0.05, logfc_cutoff = 1)
 }
 \arguments{
-\item{data_frame}{Data frame with logFC, FDR, and gene columns at minimum}
+\item{df}{Data frame with logFC, FDR, and gene columns at minimum}
 
 \item{fdr_cutoff}{FDR cutoff for significant points}
 

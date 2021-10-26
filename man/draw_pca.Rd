@@ -5,20 +5,20 @@
 \title{Draw PCA plot from data frame}
 \usage{
 draw_pca(
-  data_frame,
+  df,
   log = T,
-  group_by = NULL,
+  grouping = NULL,
   x_axis = "PC1",
   y_axis = "PC2",
   return_data = T
 )
 }
 \arguments{
-\item{data_frame}{data frame with samples in columns}
+\item{df}{data frame with samples in columns}
 
 \item{log}{should the data be log2 transformed?}
 
-\item{group_by}{groups present in the samples supplied as character vector}
+\item{grouping}{groups present in the samples supplied as character vector}
 
 \item{x_axis}{principle components to be used on the x-axis}
 
@@ -31,7 +31,7 @@ Draw PCA plot from data frame
 }
 \examples{
 \dontrun{
-draw_pca(expression_matrix, group_by = groups, return_data = F)
+draw_pca(expression_matrix, grouping = groups, return_data = F)
 }
 
 }
