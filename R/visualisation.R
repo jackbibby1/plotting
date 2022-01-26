@@ -18,7 +18,7 @@ draw_pca <- function(df,
                      grouping = NULL,
                      x_axis = "PC1",
                      y_axis = "PC2",
-                     return_data = T) {
+                     return_data = F) {
 
   if (log == T) {
     pca_dat <- stats::prcomp(t(log2(df)))
